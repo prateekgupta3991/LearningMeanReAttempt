@@ -1,31 +1,4 @@
-var app = angular.module('StayUpdated',['ui.router']);
-
-app.config(['$stateProvider', '$urlRouterProvider',
-	function($stateProvider, $urlRouterProvider) {
-		$stateProvider.state('home',
-			{
-			url:'/home',
-			templateUrl:'/home.html',
-			controller:'MainCtrl'
-		});
-
-		$stateProvider.state('posts',
-			{
-			url:'/posts/{postId}',
-			templateUrl:'/posts.html',
-			controller:'PostsCtrl'
-		});
-		$urlRouterProvider.otherwise('home');
-	}
-]);
-
-app.factory('userPost',[function() {
-		var o = {
-			post:[]
-		};
-		return o;
-	}
-]);
+var app = angular.module('StayUpdated',['ui.router', 'Routes', 'Services']);
 
 app.controller('MainCtrl', ['$scope','userPost',
 	function($scope, userPost) {
