@@ -63,6 +63,7 @@ app.controller('PostsCtrl',['$scope', 'userPost', '$stateParams',
 				author: 'user',
 				body: $scope.body
 				});
+			$scope.body = '';
 		};
 	}
 	]);
